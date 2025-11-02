@@ -9,6 +9,8 @@
 typedef uint64_t hash_t;
 
 /* hash functions */
+/* use it as a template to add a hash function for the type
+ * */
 #define DECL_HASH_ADD(_t)                                                          \
     force_inline hash_t hash_add_##_t(hash_t hash, _t x) {                         \
         return (hash ^ (((hash_t)(x)) + 0x9E3779B9u + (hash << 6) + (hash >> 2))); \

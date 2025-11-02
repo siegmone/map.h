@@ -136,7 +136,7 @@ static bool map_rehash(map_t *map) {
     if (low && map->prime != 0) {
         map->prime--;
         map_alloc(map);
-    } else if (high && map->prime != ARRLEN(PRIMES)) {
+    } else if (high && map->prime != ARRLEN(PRIMES) - 1) {
         map->prime++;
         map_alloc(map);
     }
